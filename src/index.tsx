@@ -47,9 +47,10 @@ const server = serve({
 console.log(`🚀 Server running at ${server.url}`);
 
 async function main() {
+  // await db.delete(usersTable);
+
   const user: typeof usersTable.$inferInsert = {
     name: "John",
-    age: 30,
     email: "john@example.com",
   };
 
@@ -61,9 +62,7 @@ async function main() {
 
   await db
     .update(usersTable)
-    .set({
-      age: 31,
-    })
+    .set({ name: "Johnny" })
     .where(eq(usersTable.email, user.email));
   console.log("User info updated!");
 
