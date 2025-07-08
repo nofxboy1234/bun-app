@@ -76,4 +76,4 @@ async function main() {
   console.log("Getting all users from the database: ", users3);
 }
 
-main();
+// main();
