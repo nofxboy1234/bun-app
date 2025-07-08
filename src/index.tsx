@@ -1,8 +1,9 @@
-import { serve } from "bun";
+import { serve, SQL } from "bun";
 import index from "./index.html";
 import { drizzle } from "drizzle-orm/bun-sql";
 
-const db = drizzle(process.env.DATABASE_URL!);
+const client = new SQL(process.env.DATABASE_URL!);
+const db = drizzle({ client });
 
 const server = serve({
   routes: {
