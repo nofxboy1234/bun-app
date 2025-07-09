@@ -18,6 +18,12 @@ async function selectAll() {
   console.log("Getting all users from the database: ", users);
 }
 
+async function selectOne(id: number) {
+  const user = await db.select().from(usersTable).where(eq(usersTable.id, id));
+  // console.log("Getting all users from the database: ", user);
+  return user;
+}
+
 async function insert(user: User) {
   await db.insert(usersTable).values(user);
   console.log("New user created!");
@@ -33,6 +39,6 @@ async function deleteOne(user: User) {
   console.log("User deleted!");
 }
 
-const users = { deleteAll, selectAll, insert, update, deleteOne };
+const users = { deleteAll, selectAll, insert, update, deleteOne, selectOne };
 
 export { users };

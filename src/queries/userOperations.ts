@@ -1,19 +1,29 @@
 import { users } from "./users";
 
-const user1 = {
-  name: "John",
-  email: "john@example.com",
+const alice = {
+  name: "Alice",
+  email: "alice@example.com",
 };
 
-const user2 = {
-  name: "John",
-  email: "john2@example.com",
+const bob = {
+  name: "Bob",
+  email: "bob@example.com",
 };
 
-await users.deleteAll();
-await users.insert(user1);
-await users.insert(user2);
-await users.update(user1, { name: "Dylan", email: "dylan@example.com" });
-await users.selectAll();
-await users.deleteOne({ name: "Dylan", email: "dylan@example.com" });
-await users.selectAll();
+// await users.deleteAll();
+// await users.insert(alice);
+// await users.insert(bob);
+
+// await users.update(bob, {
+//   name: "Bob",
+//   email: "bob@example.com",
+//   invitedBy: 24,
+// });
+
+// await users.selectAll();
+// await users.deleteOne({ name: "Dylan", email: "dylan@example.com" });
+
+// await users.selectAll();
+
+const bobRecord = await users.selectOne(25);
+console.log(bobRecord[0]?.invitedBy);
