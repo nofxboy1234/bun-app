@@ -16,7 +16,7 @@ async function deleteAll() {
 }
 
 async function resetData() {
-  await seed(db, { usersTable });
+  await seed(db, schema);
   console.log("Seeded the db!");
 }
 
