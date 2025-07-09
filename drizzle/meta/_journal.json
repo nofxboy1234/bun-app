@@ -15,6 +15,13 @@
       "when": 1752001800436,
       "tag": "0001_drop_age_column_from_users",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1752067401423,
+      "tag": "0002_classy_malcolm_colcord",
+      "breakpoints": true
     }
   ]
 }
