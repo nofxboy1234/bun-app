@@ -21,7 +21,15 @@ async function resetData() {
 }
 
 async function seedData() {
-  await seed(db, schema, { count: 100, seed: 19 });
+  // await seed(db, schema, { count: 100, seed: 19 });
+  await seed(db, schema).refine((f) => ({
+    usersTable: {
+      count: 20,
+      with: {
+        profileInfo: 1,
+      },
+    },
+  }));
   console.log("Seeded the db!");
 }
 
