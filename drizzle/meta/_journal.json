@@ -22,6 +22,13 @@
       "when": 1752067401423,
       "tag": "0002_classy_malcolm_colcord",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1752083969647,
+      "tag": "0003_add_profile_info_relation_to_user",
+      "breakpoints": true
     }
   ]
 }
