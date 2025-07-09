@@ -26,4 +26,5 @@ const bob = {
 // await users.selectAll();
 
 const bobRecord = await users.selectOne(25);
-console.log(bobRecord[0]?.invitedBy);
+console.log(bobRecord);
+console.log(bobRecord?.invitee);

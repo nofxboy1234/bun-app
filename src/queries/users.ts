@@ -2,11 +2,12 @@ import { SQL } from "bun";
 import { drizzle } from "drizzle-orm/bun-sql";
 import { eq } from "drizzle-orm";
 import { usersTable } from "../db/schema";
+import * as schema from "../db/schema";
 
 type User = typeof usersTable.$inferInsert;
 
 const client = new SQL(process.env.DATABASE_URL!);
-const db = drizzle({ client });
+const db = drizzle({ client, schema });
 
 async function deleteAll() {
   await db.delete(usersTable);
@@ -19,8 +20,14 @@ async function selectAll() {
 }
 
 async function selectOne(id: number) {
-  const user = await db.select().from(usersTable).where(eq(usersTable.id, id));
-  // console.log("Getting all users from the database: ", user);
+  // const user = await db.select().from(usersTable).where(eq(usersTable.id, id));
+  const user = await db.query.usersTable.findFirst({
+    where: eq(usersTable.id, id),
+    with: {
+      invitee: true,
+    },
+  });
+
   return user;
 }
 
