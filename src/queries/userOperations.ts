@@ -29,5 +29,7 @@ const bob = {
 // console.log(bobRecord);
 // console.log(bobRecord?.invitee);
 
-await users.deleteAll();
+// await users.deleteAll();
+// await users.seedData();
+
 await users.resetData();
