@@ -6,6 +6,7 @@ import json from "@eslint/json";
 import markdown from "@eslint/markdown";
 import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default defineConfig([
   {
@@ -49,4 +50,5 @@ export default defineConfig([
     language: "css/css",
     extends: ["css/recommended"],
   },
+  eslintConfigPrettier,
 ]);
