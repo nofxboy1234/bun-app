@@ -33,3 +33,4 @@ const bob = {
 // await users.seedData();
 
 await users.resetData();
+await users.seedData();

@@ -15,14 +15,14 @@ async function deleteAll() {
   console.log("Deleted all users from the database");
 }
 
-async function seedData() {
-  await seed(db, schema);
-  console.log("Seeded the db!");
-}
-
 async function resetData() {
   await reset(db, schema);
   console.log("Reset the db!");
+}
+
+async function seedData() {
+  await seed(db, schema, { count: 100, seed: 19 });
+  console.log("Seeded the db!");
 }
 
 async function selectAll() {
