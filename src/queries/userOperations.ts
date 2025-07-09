@@ -25,6 +25,9 @@ const bob = {
 
 // await users.selectAll();
 
-const bobRecord = await users.selectOne(25);
-console.log(bobRecord);
-console.log(bobRecord?.invitee);
+// const bobRecord = await users.selectOne(25);
+// console.log(bobRecord);
+// console.log(bobRecord?.invitee);
+
+await users.deleteAll();
+await users.resetData();

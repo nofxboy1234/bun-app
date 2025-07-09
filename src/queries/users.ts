@@ -3,6 +3,7 @@ import { drizzle } from "drizzle-orm/bun-sql";
 import { eq } from "drizzle-orm";
 import { usersTable } from "../db/schema";
 import * as schema from "../db/schema";
+import { seed } from "drizzle-seed";
 
 type User = typeof usersTable.$inferInsert;
 
@@ -12,6 +13,11 @@ const db = drizzle({ client, schema });
 async function deleteAll() {
   await db.delete(usersTable);
   console.log("Deleted all users from the database");
+}
+
+async function resetData() {
+  await seed(db, { usersTable });
+  console.log("Seeded the db!");
 }
 
 async function selectAll() {
@@ -46,6 +52,14 @@ async function deleteOne(user: User) {
   console.log("User deleted!");
 }
 
-const users = { deleteAll, selectAll, insert, update, deleteOne, selectOne };
+const users = {
+  deleteAll,
+  selectAll,
+  insert,
+  update,
+  deleteOne,
+  selectOne,
+  resetData,
+};
 
 export { users };
