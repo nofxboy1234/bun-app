@@ -12,7 +12,7 @@ export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: { js },
-    extends: ["js/recommended"],
+    extends: ["js/recommended", "plugin:react/jsx-runtime"],
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
