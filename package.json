@@ -6,7 +6,8 @@
   "main": "src/index.tsx",
   "module": "src/index.tsx",
   "scripts": {
-    "dev": "bun --hot src/index.tsx",
+    "srv": "bun --hot src/index.tsx",
+    "dev": "vite",
     "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
     "start": "NODE_ENV=production bun src/index.tsx",
     "lint": "bunx eslint .",
@@ -26,6 +27,7 @@
     "@types/bun": "latest",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4.6.0",
     "drizzle-kit": "^0.31.4",
     "eslint": "^9.30.1",
     "eslint-config-prettier": "^10.1.5",
@@ -33,6 +35,7 @@
     "globals": "^16.3.0",
     "pg": "^8.16.3",
     "prettier": "3.6.2",
-    "typescript-eslint": "^8.36.0"
+    "typescript-eslint": "^8.36.0",
+    "vite": "^7.0.4"
   }
 }
