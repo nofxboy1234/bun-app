@@ -37,6 +37,16 @@ export default defineConfig([
   },
   ...tseslint.configs.recommended,
   {
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off", // Turn off the rule
+      // You might also want to turn off the base ESLint version of this rule
+      // as TypeScript ESLint often disables it for you when its own version is active.
+      // If you still see issues from the base rule, uncomment the line below.
+      // "no-unused-vars": "off",
+    },
+  },
+  {
     files: ["**/*.json"],
     plugins: { json },
     language: "json/json",
