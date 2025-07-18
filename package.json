@@ -8,7 +8,7 @@
   "scripts": {
     "srv": "bun --hot src/index.tsx",
     "dev": "vite",
-    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
+    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --production --env='BUN_PUBLIC_*'",
     "start": "NODE_ENV=production bun src/index.tsx",
     "lint": "bunx eslint .",
     "format": "bunx prettier . --write",
